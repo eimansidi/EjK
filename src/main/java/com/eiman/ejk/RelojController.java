@@ -44,4 +44,21 @@ public class RelojController {
         setDigitImage(seg1, seconds / 10);   // Decenas de segundos
         setDigitImage(seg2, seconds % 10);   // Unidades de segundos
     }
+
+    private void setDigitImage(ImageView imageView, int digit) {
+        // Define los nombres de los archivos de imagen para cada dígito
+        String[] digitNames = {"ZERO", "ONE", "TWO", "THREE", "FOUR", "FIVE", "SIX", "SEVEN", "EIGHT", "NINE"};
+
+        // Construye el nombre de archivo según el valor del dígito
+        String imageFileName = imagePath + digitNames[digit] + ".png";
+
+        // Carga la imagen y la asigna al ImageView
+        Image image = new Image(getClass().getResourceAsStream(imageFileName));
+
+        // Maneja el caso si la imagen no se carga correctamente
+        if (image.isError()) {
+            System.out.println("Error loading image for digit: " + digitNames[digit]);
+        }
+        imageView.setImage(image);
+    }
 }
