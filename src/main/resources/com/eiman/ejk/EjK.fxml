@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="412.0" prefWidth="480.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.eiman.ejk.RelojController">
+    <children>
+        <!-- Imagen de fondo -->
+        <ImageView fitHeight="412.0" fitWidth="480.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@imagenes/fondoReloj.png" />
+            </image>
+        </ImageView>
+
+        <!-- Contenedor de los dígitos -->
+        <Pane prefHeight="200.0" prefWidth="200.0">
+            <children>
+                <GridPane layoutX="40.0" layoutY="180.0">
+                    <columnConstraints>
+                        <ColumnConstraints minWidth="10.0" prefWidth="50.0" />
+                        <ColumnConstraints minWidth="10.0" prefWidth="50.0" />
+                        <ColumnConstraints minWidth="10.0" prefWidth="20.0" />
+                        <ColumnConstraints minWidth="10.0" prefWidth="50.0" />
+                        <ColumnConstraints minWidth="10.0" prefWidth="50.0" />
+                        <ColumnConstraints minWidth="10.0" prefWidth="20.0" />
+                        <ColumnConstraints minWidth="10.0" prefWidth="50.0" />
+                        <ColumnConstraints minWidth="10.0" prefWidth="50.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="100.0" />
+                    </rowConstraints>
+
+                    <!-- Dígitos de la hora (HH) -->
+                    <ImageView fx:id="hora1" fitHeight="75.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@imagenes/ZERO.png" />
+                        </image>
+                    </ImageView>
+                    <ImageView fx:id="hora2" fitHeight="75.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
+                        <image>
+                            <Image url="@imagenes/ZERO.png" />
+                        </image>
+                    </ImageView>
+
+                    <!-- Separador de dos puntos -->
+                    <Label text=":" textFill="RED" GridPane.columnIndex="2" GridPane.halignment="CENTER">
+                        <font>
+                            <Font name="DIN Condensed Bold" size="80.0" />
+                        </font>
+                    </Label>
+
+                    <!-- Dígitos de los minutos (MM) -->
+                    <ImageView fx:id="min1" fitHeight="75.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="3">
+                        <image>
+                            <Image url="@imagenes/ZERO.png" />
+                        </image>
+                    </ImageView>
+                    <ImageView fx:id="min2" fitHeight="75.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4">
+                        <image>
+                            <Image url="@imagenes/ZERO.png" />
+                        </image>
+                    </ImageView>
+                    <Label text=":" textFill="RED" GridPane.columnIndex="5" GridPane.halignment="CENTER">
+                        <font>
+                            <Font name="DIN Condensed Bold" size="80.0" />
+                        </font>
+                    </Label>
+                    <ImageView fx:id="seg1" fitHeight="75.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="6">
+                        <image>
+                            <Image url="@imagenes/ZERO.png" />
+                        </image>
+                    </ImageView>
+                    <ImageView fx:id="seg2" fitHeight="75.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="7">
+                        <image>
+                            <Image url="@imagenes/ZERO.png" />
+                        </image>
+                    </ImageView>
+                </GridPane>
+            </children>
+        </Pane>
+    </children>
+</StackPane>
